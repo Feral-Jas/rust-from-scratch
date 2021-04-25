@@ -6,8 +6,10 @@ fn main() {
     let mut guess = String::new();
 
     io::stdin()
-    .read_line(&mut guess)
-    .expect("error occurs");  //here expect means if error happens, console shows the str
+        .read_line(&mut guess)
+        .expect("you are not guessing a right word");
+    //The right way to suppress the warning is to actually write error handling in Chapter 9
 
-    println!("your guess:{}",guess);
+    println!("your guess:{}", guess);
+    //brackets are placeholders for variables
 }
