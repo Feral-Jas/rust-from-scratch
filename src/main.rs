@@ -8,20 +8,34 @@ fn main() {
     let secret = rand::thread_rng().gen_range(1, 100);
 
     println!("generated number");
+    println!("let's start the game");
+    loop {
+        let mut guess = String::new();
+        io::stdin()
+            .read_line(&mut guess)
+            //The right way to suppress the warning is to actually write error handling in Chapter 9
+            .expect("you are not guessing a right word");
 
-    let mut guess = String::new();
+        // parses a string to specific type of number you defined
+        // reusing variables are important, called 'Shadow'
+        let guess: u32 = match guess.trim().parse() {
+            //here shows the error handling, two states are catched for results
+            Ok(num) => num,
+            Err(_) => {
+                continue;
+            }
+        };
 
-    io::stdin()
-        .read_line(&mut guess)
-        .expect("you are not guessing a right word");
-    //The right way to suppress the warning is to actually write error handling in Chapter 9
-
-    let guess: u32 = guess.trim().parse().expect("plz type a number");
-    println!("your guess:{}", guess);
-    //brackets are placeholders for variables
-    match guess.cmp(&secret) {
-        Ordering::Less => println!("Too small"),
-        Ordering::Equal => println!("fit!"),
-        Ordering::Greater => println!("Too big"),
+        // brackets are placeholders for variables
+        print!("your guess:{}\t", guess);
+        match guess.cmp(&secret) {
+            Ordering::Less => println!("Too small\t"),
+            Ordering::Greater => println!("Too big\t"),
+            Ordering::Equal => {
+                println!("fit!");
+                //coorect and break the loop
+                break;
+            }
+        }
     }
 }
