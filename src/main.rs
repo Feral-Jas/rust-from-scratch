@@ -19,7 +19,8 @@ fn main() {
         // parses a string to specific type of number you defined
         // reusing variables are important, called 'Shadow'
         let guess: u32 = match guess.trim().parse() {
-            //here shows the error handling, two states are catched for results
+            //? Switching from an expect call to a match expression
+            //* crashing on an error to handling the error
             Ok(num) => num,
             Err(_) => {
                 continue;
