@@ -1,42 +1,29 @@
-use rand::Rng;
-use std::cmp::Ordering;
-use std::io;
-
 fn main() {
-    println!("start a guess");
-
-    let secret = rand::thread_rng().gen_range(1, 100);
-
-    println!("generated number");
-    println!("let's start the game");
-    loop {
-        let mut guess = String::new();
-        io::stdin()
-            .read_line(&mut guess)
-            //The right way to suppress the warning is to actually write error handling in Chapter 9
-            .expect("you are not guessing a right word");
-
-        // parses a string to specific type of number you defined
-        // reusing variables are important, called 'Shadow'
-        let guess: u32 = match guess.trim().parse() {
-            //? Switching from an expect call to a match expression
-            //* crashing on an error to handling the error
-            Ok(num) => num,
-            Err(_) => {
-                continue;
-            }
-        };
-
-        // brackets are placeholders for variables
-        print!("your guess:{}\t", guess);
-        match guess.cmp(&secret) {
-            Ordering::Less => println!("Too small\t"),
-            Ordering::Greater => println!("Too big\t"),
-            Ordering::Equal => {
-                println!("fit!");
-                //coorect and break the loop
-                break;
-            }
-        }
-    }
+    mutable();
+    constant();
+    shadow();
 }
+fn mutable() {
+    println!("------------mutable and immutable variable explained");
+
+    //* In Rust, the compiler guarantees that when you state that a value won’t change, it really won’t change
+    //? which to choose?
+    //* large structure is faster using mutable variables
+    //* small structure is more readable using immutable variables
+
+    let mut x = 5;
+    println!("The value of x is: {}", x);
+    x = 6;
+    println!("The value of x is: {}", x);
+}
+fn constant() {
+    println!("------------constant variable explained");
+
+    //? Uppercase and type annotation is a must
+    //* 1. cannot use 'mut' with 'const'
+    //* 2. const can be decalred at any scope including global scope
+    //* 3. const can only be set with 'const' expression
+    const Y: i32 = 7;
+    println!("{}", Y);
+}
+fn shadow() {}
