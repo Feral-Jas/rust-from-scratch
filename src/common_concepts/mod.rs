@@ -14,4 +14,5 @@ pub fn concepts_explained() {
     data_type::tuple();
     data_type::array();
     function::expression();
+    function::fn_get_return();
 }
