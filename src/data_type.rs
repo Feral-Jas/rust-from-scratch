@@ -10,17 +10,62 @@
 
 pub fn integers() {
     println!("------------integer explained");
+    //? i/u 8-128
+    //? isize/usize based on arch
+    //* if not assigned type, i32 is default
+
     let x: u8 = 4;
     let y: i32 = 66;
     let z: u64 = 196;
     println!("x:{}\ty:{}\tz:{}", x, y, z);
-    //? i/u 8-128
-    //? isize/usize based on arch
+
+    let q: isize = -5_432;
+    let p: usize = 5_432;
+    println!("dynamic value:{},{}", q, p);
 }
 pub fn floats() {
     //?  f32,f64 default(f64) with IEEE-754
     println!("------------float explained");
+
     let x = 3.2; //f64
     let y: f32 = 4.7; //f32
     println!("x:{}\ty:{}", x, y);
+}
+pub fn numeric_operation() {
+    println!("------------numeric opoeration explained");
+
+    let a = 3 + 2;
+    let b = 5 - 3;
+    let c = 7 * 12;
+    let d = 9 / 3;
+    let e = 46 % 13;
+    println!("{},{},{},{},{}", a, b, c, d, e)
+}
+pub fn boolean() {
+    println!("------------boolean explained");
+    //? Boolean type are use as 'bool' in Rust
+    //* still if you dont specify type, compiler will decide based on your value
+
+    let flag = true;
+    let flag1: bool = false;
+    println!("flage={}", flag);
+    println!("flag1={}", flag1);
+}
+pub fn character() {
+    println!("------------character explained");
+    //? Rust character type are defined by using ' ' single quotes
+    //* Unicode, 4 bytes in size
+
+    let emoji = '😈';
+    let ascii = 'A';
+
+    println!("emoji:{},ascii:{}", emoji, ascii);
+}
+pub fn tuple() {
+    println!("------------tuple explained");
+    //? Tuples have a fixed length: once declared, they cannot grow or shrink in size.
+    //? one tuple cannot be directly displayed, you should access into the element
+    let tup1 = ('😈', 43, "james", true);
+    let (a, b, c, d) = tup1;
+    println!("{},{},{},{}", a, b, c, d);
 }

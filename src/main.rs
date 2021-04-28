@@ -6,4 +6,8 @@ fn main() {
     variable_mutability::shadow();
     data_type::integers();
     data_type::floats();
+    data_type::numeric_operation();
+    data_type::boolean();
+    data_type::character();
+    data_type::tuple();
 }
