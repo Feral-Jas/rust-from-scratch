@@ -7,7 +7,6 @@
 //* floating-point numbers
 //* Booleans
 //* characters
-
 pub fn integers() {
     println!("------------integer explained");
     //? i/u 8-128
