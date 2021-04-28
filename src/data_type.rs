@@ -68,4 +68,21 @@ pub fn tuple() {
     let tup1 = ('😈', 43, "james", true);
     let (a, b, c, d) = tup1;
     println!("{},{},{},{}", a, b, c, d);
+    println!("{},{},{},{}", tup1.0, tup1.1, tup1.2, tup1.3)
+}
+pub fn array() {
+    println!("------------array explained");
+    //? Array's size is fixed rather than vector
+    let weekdays = ["Mon", "Tue", "Wen", "Thu", "Fri", "Sat", "Sun"];
+    let nums = [5; 8];
+    let nums1: [i32; 3] = [4, 7, 1];
+    println!(
+        "{},{},{},{},{},{},{}",
+        weekdays[0], weekdays[1], weekdays[2], weekdays[3], weekdays[4], weekdays[5], weekdays[6]
+    );
+    println!(
+        "{},{},{},{},{}",
+        nums[0], nums[1], nums[2], nums[3], nums[4]
+    );
+    println!("{},{},{}", nums1[0], nums1[1], nums1[2]);
 }

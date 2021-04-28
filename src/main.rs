@@ -10,4 +10,5 @@ fn main() {
     data_type::boolean();
     data_type::character();
     data_type::tuple();
+    data_type::array();
 }
