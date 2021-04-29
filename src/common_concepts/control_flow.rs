@@ -62,3 +62,13 @@ pub fn for_fn() {
         println!("element is {}", item);
     }
 }
+
+pub fn for_rev() {
+    println!("------------for explained");
+    //? for function + rev
+
+    let a = [10, 11, 12, 13];
+    for index in (0..3).rev() {
+        println!("{}", a[index]);
+    }
+}

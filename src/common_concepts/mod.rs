@@ -21,4 +21,5 @@ pub fn concepts_explained() {
     control_flow::loop_fn();
     control_flow::while_fn();
     control_flow::for_fn();
+    control_flow::for_rev();
 }
