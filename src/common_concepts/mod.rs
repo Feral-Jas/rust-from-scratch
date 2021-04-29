@@ -1,3 +1,4 @@
+pub mod control_flow;
 pub mod data_type;
 pub mod function;
 pub mod variable_mutability;
@@ -15,4 +16,9 @@ pub fn concepts_explained() {
     data_type::array();
     function::expression();
     function::fn_get_return();
+    control_flow::if_else();
+    control_flow::if_in_let();
+    control_flow::loop_fn();
+    control_flow::while_fn();
+    control_flow::for_fn();
 }
